@@ -1,0 +1,9 @@
+.dialogItem a {
+  text-decoration: none;
+  transition: .1s linear;
+}
+
+.dialogItem a.active,
+.dialogItem a:hover {
+  color: tomato;
+}
