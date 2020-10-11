@@ -13,3 +13,11 @@ h3 {
 .postTextarea {
   padding: 15px 0;
 }
+
+.btn {
+  padding: 5px 15px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
