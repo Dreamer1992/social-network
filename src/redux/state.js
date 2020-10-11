@@ -13,7 +13,8 @@ const state = {
         message: 'It\'s my first post',
         like: 17
       }
-    ]
+    ],
+    newPostText: 'it-kamasutra'
   },
   dialogsPage: {
     dialogs: [
@@ -55,13 +56,19 @@ const state = {
   }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 6,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     like: 0
   }
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText('');
+  rerenderEntireThree(state);
+}
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
   rerenderEntireThree(state);
 }
 

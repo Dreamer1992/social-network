@@ -6,8 +6,12 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 const Profile = (props) => {
   return (
     <main className={styles.profile}>
-      <ProfileInfo />
-      <Posts posts={props.state.posts} addPost={props.addPost}/>
+      <ProfileInfo/>
+      <Posts posts={props.profilePage.posts}
+             newPostText={props.profilePage.newPostText}
+             addPost={props.addPost}
+             updateNewPostText={props.updateNewPostText}
+      />
     </main>
   )
 }
