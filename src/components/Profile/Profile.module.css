@@ -1,0 +1,7 @@
+.profile {
+  grid-area: content;
+}
+
+.profile img {
+  width: 100%;
+}

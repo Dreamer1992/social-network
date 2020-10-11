@@ -1,0 +1,26 @@
+.sidebar {
+  grid-area: sidebar;
+  background: #9162e4;
+  padding: 15px;
+}
+
+.sidebar ul {
+  padding: 0;
+}
+
+.sidebar ul  li {
+  list-style-type: none;
+}
+
+.sidebar ul  li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 0;
+  color: #fff;
+  transition: .2s linear;
+}
+
+.sidebar ul  li a.activeLink,
+.sidebar ul  li a:hover {
+  color: tomato;
+}
