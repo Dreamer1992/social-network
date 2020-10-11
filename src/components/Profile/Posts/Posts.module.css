@@ -1,0 +1,23 @@
+.profile {
+  grid-area: content;
+}
+
+h3 {
+  margin-top: 15px;
+}
+
+.profile img {
+  width: 100%;
+}
+
+.postTextarea {
+  padding: 15px 0;
+}
+
+.btn {
+  padding: 5px 15px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
