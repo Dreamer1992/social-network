@@ -63,7 +63,7 @@ export let addPost = () => {
     like: 0
   }
   state.profilePage.posts.push(newPost);
-  state.profilePage.newPostText('');
+  state.profilePage.newPostText = '';
   rerenderEntireThree(state);
 }
 
