@@ -1,0 +1,33 @@
+.userPhoto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.userItem {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.userItem > div:first-child {
+  min-width: 156px;
+}
+
+.userItemInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.userItemInfo > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.userItemInfo > div:first-child {
+  justify-content: space-around;
+}
+
+.userItemInfo > div:last-child {
+  justify-content: space-around;
+}
