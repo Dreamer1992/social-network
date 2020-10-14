@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './Post.module.css';
+import myPhoto from '../../../../assets/images/default_avatar.png';
 
 const Post = (props) => {
   return (
     <div className={styles.post}>
       <img
-        src="https://www.nj.com/resizer/h8MrN0-Nw5dB5FOmMVGMmfVKFJo=/450x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg"
+        src={myPhoto}
         alt=""/>
       <span>{props.message}</span>
       <div>Like {props.like}</div>

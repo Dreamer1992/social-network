@@ -1,10 +1,11 @@
 import React from 'react';
+import profileBg from '../../../assets/images/profile_bg.png';
 
 const ProfileInfo = (props) => {
   return (
     <div>
       <div>
-        <img src="https://atlant777.ru/wp-content/uploads/2018/09/artskinali-171.png" alt=""/>
+        <img src={profileBg} alt=''/>
       </div>
       <div>
         ava + description
