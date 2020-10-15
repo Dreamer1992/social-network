@@ -1,0 +1,8 @@
+.profileTopBg img {
+  width: 100%;
+}
+
+.profileAvatar img {
+  width: 100%;
+  max-width: 300px;
+}
