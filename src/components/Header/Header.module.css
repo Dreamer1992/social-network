@@ -2,9 +2,28 @@
   grid-area: header;
   border-top: 5px solid #280680;
   background: #5e35b1;
+  display: flex;
+  justify-content: space-between;
 }
 
-.logo {
+.headerLogo img {
   width: 100%;
   max-width: 75px;
+}
+
+.headerAuth {
+  margin: 5px 15px;
+  color: #fff;
+}
+
+.headerAuth a {
+  display: inline-block;
+  padding-bottom: 2px;
+  color: #fff;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+
+.headerAuth a:hover {
+  border-bottom: 1px solid #fff;
 }
