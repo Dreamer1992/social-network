@@ -1,4 +1,3 @@
-import React from 'react';
 import {connect} from 'react-redux';
 import {sendMessageCreator, updateNewMessageTextCreator} from "../../redux/dialogsReducer";
 import Dialogs from './Dialogs';
