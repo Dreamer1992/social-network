@@ -1,21 +1,32 @@
 import React from 'react';
 import styles from './Posts.module.css';
 import Post from "./Post/Post";
+import {Field, reduxForm} from "redux-form";
+
+const AddNewPostForm = (props) => {
+  return (
+    <form onSubmit={props.handleSubmit}>
+      <Field component={'textarea'} name={'newPostText'} row='2' value={props.newPostText}/>
+      <button className={styles.btn}>Add post</button>
+    </form>
+  )
+}
+
+const AddNewPostFormRedux = reduxForm({form: 'addNewPost'})(AddNewPostForm);
 
 const Posts = (props) => {
 
-  let postsElements = props.posts.map(post => <Post key={post.id} id={post.id} message={post.message} like={post.like}/>);
+  let postsElements = props.posts.map(post => <Post key={post.id} id={post.id} message={post.message}
+                                                    like={post.like}/>);
 
-  let newPostElement = React.createRef();
-
-  let onAddPost = () => {
-    props.addPost();
+  let onAddPost = (values) => {
+    props.addPost(values.newPostText);
   }
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.updateNewPostText(text);
-  }
+  // let onPostChange = () => {
+  //   let text = newPostElement.current.value;
+  //   props.updateNewPostText(text);
+  // }
 
   return (
     <div>
@@ -23,10 +34,7 @@ const Posts = (props) => {
 
       <div className={styles.postTextarea}>
         <div>
-          <textarea ref={newPostElement} onChange={onPostChange} rows="2" value={props.newPostText}/>
-        </div>
-        <div>
-          <button className={styles.btn} onClick={onAddPost}>Add post</button>
+          <AddNewPostFormRedux onSubmit={onAddPost}/>
         </div>
       </div>
 
