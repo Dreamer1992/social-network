@@ -1,7 +1,8 @@
 import React from 'react';
-import {Field, reduxForm} from "redux-form";
-import {required} from "../../../utils/validators/validators";
-import {Input} from "../../common/FormsControls/FormsControls";
+import {Field, reduxForm} from 'redux-form';
+import {required} from '../../../utils/validators/validators';
+import {Input} from '../../common/FormsControls/FormsControls';
+import styles from './../../common/FormsControls/FormsControls.module.css';
 
 const LoginForm = (props) => {
   return (
@@ -27,6 +28,11 @@ const LoginForm = (props) => {
                name='rememberMe'
         /> remember me
       </div>
+      {
+        props.error && <div className={styles.loginError}>
+          {props.error}
+        </div>
+      }
       <div>
         <button>Login</button>
       </div>

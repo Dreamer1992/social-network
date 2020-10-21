@@ -6,3 +6,10 @@
 .formControl .textError {
   color: red;
 }
+
+.loginError {
+  color: red;
+  padding: 5px;
+  border: 1px solid red;
+  margin: 5px 0;
+}
