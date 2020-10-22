@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import defaultAvatar from '../../../assets/images/default_avatar.png';
-import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHook from "./ProfileStatusWithHook";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -16,7 +16,7 @@ const ProfileInfo = (props) => {
       {/*</div>*/}
       <div className={styles.profileAvatar}>
         <img src={props.profile.photos.large ? props.profile.photos.large : defaultAvatar} alt=""/>
-        <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
+        <ProfileStatusWithHook status={props.status} updateUserStatus={props.updateUserStatus}/>
         <p>{props.profile.fullName}</p>
         ava + description
       </div>
