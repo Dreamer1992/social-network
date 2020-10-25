@@ -40,23 +40,3 @@
 .userItemInfo > div:last-child {
   justify-content: space-around;
 }
-
-.selectedPage {
-  font-weight: bold;
-}
-
-.pagination {
-  display: flex;
-  max-width: 560px;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.pagination span {
-  display: inline-block;
-  margin-right: 15px;
-}
-
-.pagination span:hover {
-  cursor: pointer;
-}

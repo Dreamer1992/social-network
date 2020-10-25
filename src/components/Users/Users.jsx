@@ -1,24 +1,16 @@
-import React from "react";
-import styles from "./Users.module.css";
-import userPhoto from "../../assets/images/default_avatar.png";
-import {NavLink} from "react-router-dom";
+import React from 'react';
+import styles from './Users.module.css';
+import userPhoto from '../../assets/images/default_avatar.png';
+import {NavLink} from 'react-router-dom';
+import Pagination from '../common/Pagination/Pagination';
 
 let Users = (props) => {
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-
-  let pages = [];
-  for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i);
-  }
-
   return <div>
-    <div className={styles.pagination}>
-      {pages.map(page => {
-        return <span className={props.currentPage === page && styles.selectedPage} key={page} onClick={(e) => {
-          props.onPageChanged(page);
-        }}>{page}</span>
-      })}
-    </div>
+    <Pagination totalItemsCount={props.totalUsersCount}
+                pageSize={props.pageSize}
+                currentPage={props.currentPage}
+                onPageChanged={props.onPageChanged}
+    />
     {
       props.users.map(user => <div key={user.id} className={styles.userItem}>
         <div>
