@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pagination span {
+  display: inline-block;
+  margin: 0 5px;
+  background: rgba(145, 98, 228, .2);
+  padding: 3px 10px;
+  border: 1px solid #9162e4;
+  border-radius: 3px;
+  transition: background-color .2s linear;
+}
+
+.pagination span:hover {
+  cursor: pointer;
+  background: #9162e4;
+  border-color: #5e35b1;
+}
+
+.pagination span.selectedPage {
+  background: #9162e4;
+  border-color: #5e35b1;
+  color: #fff;
+}
