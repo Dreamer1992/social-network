@@ -7,14 +7,14 @@ import styles from './../../common/FormsControls/FormsControls.module.css';
 const LoginForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <div>
+      <div className={styles.formGroup}>
         <Field component={Input}
                name='email'
                placeholder='Email'
                validate={[required]}
         />
       </div>
-      <div>
+      <div className={styles.formGroup}>
         <Field component={Input}
                type='password'
                name='password'

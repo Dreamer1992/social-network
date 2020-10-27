@@ -2,17 +2,3 @@
   display: grid;
   grid-template-columns: 2fr 10fr;
 }
-
-textarea {
-  padding: 10px;
-  border: 1px solid #ddd;
-  outline: none;
-}
-
-button {
-  padding: 5px 10px;
-}
-
-button:hover {
-  cursor: pointer;
-}

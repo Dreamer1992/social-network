@@ -1,19 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './ProfileInfo.module.css';
-import Preloader from "../../common/Preloader/Preloader";
+import Preloader from '../../common/Preloader/Preloader';
 import defaultAvatar from '../../../assets/images/default_avatar.png';
-import ProfileStatusWithHook from "./ProfileStatusWithHook";
+import ProfileStatusWithHook from './ProfileStatusWithHook';
+import ProfileData from './ProfileData/ProfileData';
+import ProfileDataForm from "./ProfileData/ProfileDataForm";
 
-const ProfileInfo = ({profile, status, updateUserStatus, isOwner, savePhoto}) => {
+const ProfileInfo = ({profile, status, updateUserStatus, isOwner, savePhoto, saveProfile}) => {
+
+  let [editMode, setEditMode] = useState(false);
+
   if (!profile) {
     return <Preloader/>
   }
 
-  let onMainPhotoSelected = (e) => {
-    console.log(e)
+  const onMainPhotoSelected = (e) => {
     if (e.target.files.length) {
       savePhoto(e.target.files[0]);
     }
+  }
+
+  const onSubmit = (formData) => {
+    saveProfile(formData)
+      .then(() => {
+        setEditMode(false);
+      });
   }
 
   return (
@@ -24,9 +35,15 @@ const ProfileInfo = ({profile, status, updateUserStatus, isOwner, savePhoto}) =>
       <div className={styles.profileAvatar}>
         <img src={profile.photos.large ? profile.photos.large : defaultAvatar} alt=""/>
         {isOwner && <div><input type={'file'} onChange={onMainPhotoSelected}/></div>}
+
+        {editMode
+          ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
+          : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={() => {
+            setEditMode(true)
+          }}/>
+        }
+
         <ProfileStatusWithHook status={status} updateUserStatus={updateUserStatus}/>
-        <p>{profile.fullName}</p>
-        ava + description
       </div>
     </div>
   )

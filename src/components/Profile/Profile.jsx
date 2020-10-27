@@ -8,6 +8,7 @@ const Profile = (props) => {
     <main className={styles.profile}>
       <ProfileInfo isOwner={props.isOwner}
                    savePhoto={props.savePhoto}
+                   saveProfile={props.saveProfile}
                    profile={props.profile}
                    status={props.status}
                    updateUserStatus={props.updateUserStatus}

@@ -9,7 +9,12 @@
 
 .loginError {
   color: red;
-  padding: 5px;
-  border: 1px solid red;
-  margin: 5px 0;
+  margin: 20px 0;
+  background: rgba(255, 0, 0, .1);
+  padding: 10px 20px;
+  transition: all .2s linear;
+}
+
+.formGroup {
+  margin-bottom: 10px;
 }

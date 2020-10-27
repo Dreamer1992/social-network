@@ -1,0 +1,23 @@
+.contactItem {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.profileDataForm {
+  margin: 20px 0;
+  padding: 15px 0;
+  border-top: 1px solid #e7edf2;
+  border-bottom: 1px solid #e7edf2;
+}
+
+.formGroup {
+  margin-bottom: 10px;
+}
+
+.hasError {
+  color: red;
+  margin: 20px 0;
+  background: rgba(255, 0, 0, .1);
+  padding: 10px 20px;
+  transition: all .2s linear;
+}
