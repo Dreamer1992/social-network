@@ -29,7 +29,15 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
         /> remember me
       </div>
 
-      {captchaUrl && <img src={captchaUrl}/>}
+      {captchaUrl && <img src={captchaUrl} alt=''/>}
+      {captchaUrl &&
+      <div className={styles.formGroup}>
+        <Field component={Input}
+               name='captcha'
+               placeholder='Symbols from image'
+               validate={[required]}
+        />
+      </div>}
 
       {
         error && <div className={styles.loginError}>
