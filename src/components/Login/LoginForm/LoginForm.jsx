@@ -4,9 +4,9 @@ import {required} from '../../../utils/validators/validators';
 import {Input} from '../../common/FormsControls/FormsControls';
 import styles from './../../common/FormsControls/FormsControls.module.css';
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error, captchaUrl}) => {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className={styles.formGroup}>
         <Field component={Input}
                name='email'
@@ -28,9 +28,12 @@ const LoginForm = (props) => {
                name='rememberMe'
         /> remember me
       </div>
+
+      {captchaUrl && <img src={captchaUrl}/>}
+
       {
-        props.error && <div className={styles.loginError}>
-          {props.error}
+        error && <div className={styles.loginError}>
+          {error}
         </div>
       }
       <div>
