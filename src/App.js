@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route, withRouter} from 'react-router-dom';
+import {Route, withRouter, Switch, Redirect} from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -28,10 +28,14 @@ class App extends React.Component {
         <HeaderContainer/>
         <Sidebar/>
         <div className='app-content'>
-          <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
-          <Route path='/dialogs' render={() => <DialogsContainer/>}/>
-          <Route path='/users' render={() => <UsersContainer/>}/>
-          <Route path='/login' render={() => <Login/>}/>
+          <Switch>
+            <Redirect exact from='/' to='/profile'/>
+            <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+            <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+            <Route path='/users' render={() => <UsersContainer/>}/>
+            <Route path='/login' render={() => <Login/>}/>
+            <Route path='*' render={() => <div>404 NOT FOUND</div>}/>
+          </Switch>
         </div>
       </div>
     )
