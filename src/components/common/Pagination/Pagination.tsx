@@ -7,6 +7,7 @@ type PropsType = {
   currentPage: number
   onPageChanged: (pageNumber: number) => void
   portionSize?: number
+  className?: any
 }
 
 const Pagination: React.FC<PropsType> = ({
@@ -38,8 +39,7 @@ const Pagination: React.FC<PropsType> = ({
       {pages
         .filter(page => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
         .map(page => {
-          // @ts-ignore
-          return <span className={currentPage === page && styles.selectedPage} key={page} onClick={(e) => {
+          return <span className={currentPage === page ? styles.selectedPage : ''} key={page} onClick={(e) => {
             onPageChanged(page);
           }}>{page}</span>
         })}
