@@ -7,7 +7,6 @@ type PropsType = {
   currentPage: number
   onPageChanged: (pageNumber: number) => void
   portionSize?: number
-  className?: any
 }
 
 const Pagination: React.FC<PropsType> = ({
