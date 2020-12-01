@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from "./LoginForm/LoginForm";
-import {login} from "../../redux/authReducer";
+import {login} from "../../store/reducers/authReducer";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 

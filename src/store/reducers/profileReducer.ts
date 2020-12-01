@@ -1,6 +1,6 @@
-import {profileAPI, userAPI} from "../api/api";
+import {profileAPI, userAPI} from "../../api/api";
 import {stopSubmit} from "redux-form";
-import {PhotosType, PostType, ProfileType} from "../types/types";
+import {PhotosType, PostType, ProfileType} from "../../types/types";
 
 const ADD_POST = 'ADD_POST';
 const DELETE_POST = 'DELETE_POST';

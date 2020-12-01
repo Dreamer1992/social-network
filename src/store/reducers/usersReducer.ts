@@ -1,5 +1,5 @@
-import {userAPI} from "../api/api";
-import {UserType} from "../types/types";
+import {userAPI} from "../../api/api";
+import {UserType} from "../../types/types";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';

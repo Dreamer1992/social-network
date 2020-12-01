@@ -1,10 +1,24 @@
-import React, {useState} from 'react';
-import styles from './Pagination.module.css';
+import React, {useState} from 'react'
+import styles from './Pagination.module.css'
 
-const Pagination = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
+type PropsType = {
+  totalItemsCount: number
+  pageSize: number
+  currentPage: number
+  onPageChanged: (pageNumber: number) => void
+  portionSize?: number
+}
+
+const Pagination: React.FC<PropsType> = ({
+                                           totalItemsCount,
+                                           pageSize,
+                                           currentPage,
+                                           onPageChanged,
+                                           portionSize = 10
+                                         }) => {
   let pagesCount = Math.ceil(totalItemsCount / pageSize);
 
-  let pages = [];
+  let pages: Array<number> = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
@@ -24,6 +38,7 @@ const Pagination = ({totalItemsCount, pageSize, currentPage, onPageChanged, port
       {pages
         .filter(page => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
         .map(page => {
+          // @ts-ignore
           return <span className={currentPage === page && styles.selectedPage} key={page} onClick={(e) => {
             onPageChanged(page);
           }}>{page}</span>
