@@ -16,6 +16,11 @@ const Pagination: React.FC<PropsType> = ({
                                            onPageChanged,
                                            portionSize = 10
                                          }) => {
+  // totalItemsCount - кол-во всех элементов
+  // pagesCount - общее кол-во страниц
+  // pageSize - кол-во элементов на странице
+  // portionSize - кол-во отображаемых кнопок в пагинации
+
   let pagesCount = Math.ceil(totalItemsCount / pageSize);
 
   let pages: Array<number> = [];

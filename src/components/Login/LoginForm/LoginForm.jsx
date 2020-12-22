@@ -1,40 +1,40 @@
-import React from 'react';
-import {Field, reduxForm} from 'redux-form';
-import {required} from '../../../utils/validators/validators';
-import {Input} from '../../common/FormsControls/FormsControls';
-import styles from './../../common/FormsControls/FormsControls.module.css';
+import React from "react"
+import {Field, reduxForm} from "redux-form"
+import {required} from "../../../utils/validators/validators"
+import {Input} from "../../common/FormsControls/FormsControls"
+import styles from "./../../common/FormsControls/FormsControls.module.css"
 
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
-  return (
-    <form onSubmit={handleSubmit}>
-      <div className={styles.formGroup}>
-        <Field component={Input}
-               name='email'
-               placeholder='Email'
-               validate={[required]}
-        />
+    return (
+            <form onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                    <Field component={Input}
+                           name='email'
+                           placeholder='Почта'
+                           validate={[required]}
+                    />
       </div>
-      <div className={styles.formGroup}>
-        <Field component={Input}
-               type='password'
-               name='password'
-               placeholder='Password'
-               validate={[required]}
-        />
-      </div>
-      <div>
-        <Field component={Input}
-               type={'checkbox'}
-               name='rememberMe'
-        /> remember me
-      </div>
+                <div className={styles.formGroup}>
+                    <Field component={Input}
+                           type='password'
+                           name='password'
+                           placeholder='Пароль'
+                           validate={[required]}
+                    />
+                </div>
+                <div className={styles.formGroup}>
+                    <Field component={Input}
+                           type={'checkbox'}
+                           name='rememberMe'
+                    /> Запомнить меня
+                </div>
 
       {captchaUrl && <img src={captchaUrl} alt=''/>}
       {captchaUrl &&
       <div className={styles.formGroup}>
         <Field component={Input}
                name='captcha'
-               placeholder='Symbols from image'
+               placeholder='Символы с изображения'
                validate={[required]}
         />
       </div>}
@@ -45,7 +45,7 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
         </div>
       }
       <div>
-        <button>Login</button>
+          <button>Отправить</button>
       </div>
     </form>
   )

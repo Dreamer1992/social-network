@@ -1,25 +1,25 @@
-import React from 'react';
-import Profile from "./Profile";
-import {connect} from 'react-redux';
+import React from "react"
+import Profile from "./Profile"
+import {connect} from "react-redux"
 import {
-  getUserProfile,
-  getUserStatus,
-  savePhoto,
-  saveProfile,
-  updateUserStatus
-} from '../../store/reducers/profileReducer';
-import {withRouter} from 'react-router-dom';
-import {compose} from "redux";
+    getUserProfile,
+    getUserStatus,
+    savePhoto,
+    saveProfile,
+    updateUserStatus
+} from "../../store/reducers/profileReducer"
+import {withRouter} from "react-router-dom"
+import {compose} from "redux"
 
 class ProfileContainer extends React.Component {
 
-  refreshProfile() {
-    let userId = this.props.match.params.userId;
-    if (!userId) {
-      userId = this.props.authorizedUserId;
-      if (!userId) {
-        this.props.history.push('/login');
-      }
+    refreshProfile() {
+        let userId = this.props.match.params.userId;
+        if (!userId) {
+            userId = this.props.authorizedUserId;
+            if (!userId) {
+                this.props.history.push('/login');
+            }
     }
 
     this.props.getUserProfile(userId);
